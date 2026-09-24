@@ -1,42 +1,49 @@
 # dsh-signal 🚦
 
-DeepSeek API Peak / Off-Peak Hours Status Banner for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web GUI.  
-*Индикатор пиковых и льготных часов DeepSeek API для веб-интерфейса DeepSeek Harness (RU / EN).*
+Intelligent DeepSeek API Peak / Off-Peak Hours Tariff Monitor for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web GUI.  
+*Интеллектуальный монитор тарифов DeepSeek (пиковые часы / скидка 50%) для веб-интерфейса DeepSeek Harness (RU / EN).*
 
-Real-time, zero-dependency header status chip showing whether the current Beijing time falls inside DeepSeek's official API peak window, with a live clock, countdown to the next tariff transition, and interactive pricing details.
+Bespoke, zero-dependency header status chip with dual-timezone intelligence, live phase countdown, dynamic progress bar, and silent visual transition alerts.
 
 ---
 
 ## ⚡ Features / Возможности
 
-- 🟢 **Off-Peak Hours (50% Discount) / Льготные часы (скидка 50%):**
-  - Displays green badge with live Beijing time (`UTC+8`) and countdown to the next peak window.
+- 🕒 **Dual Timezone Intelligence (Моё время ⇄ Пекин):**
+  - Instant toggle between your local browser time (e.g. UTC+3 Moscow/Minsk) and Beijing time (`UTC+8`).
+  - Automatically calculates and converts peak intervals into your local time zone (e.g., in UTC+3: `04:00–07:00` and `09:00–13:00`).
+  - *Мгновенный выбор между местным временем браузера и Пекином. Автоматический пересчёт интервалов расписания под ваш город.*
+- 🟢 **Off-Peak Hours (50% Discount) / Льготный режим (скидка 50%):**
+  - Displays dynamic green badge with live countdown to the next peak window.
   - Automatically handles weekends (**Saturday & Sunday are 24/7 all-day 50% discount**).
-  - *Отображает зелёный бейдж с точным пекинским временем и таймером до следующего пика. В выходные (Сб и Вс) скидка 50% действует круглосуточно.*
-- 🔴 **Peak Hours (2× Standard Rate) / Пиковые часы (стандартный тариф):**
-  - Displays red badge with countdown until off-peak hours resume.
-  - *Красный бейдж с обратным отсчетом до перехода на льготный тариф со скидкой.*
+  - *Зелёный индикатор с обратным отсчетом до следующего пика. В выходные (Сб и Вс) скидка 50% действует круглосуточно.*
+- 🔴 **Peak Hours (100% Rate) / Пиковые часы (стандартный тариф 100%):**
+  - Displays pulsing red badge with countdown until off-peak discount hours resume.
+  - *Пульсирующий красный индикатор с таймером до перехода на режим 50% скидки.*
+- 🔔 **Silent Visual Alerts / Тихие визуальные уведомления:**
+  - Non-intrusive floating toast notification when the tariff changes (peak ⇄ off-peak).
+  - Auto-dismisses after 6 seconds with smooth animation. Completely silent (no audio).
+  - *Всплывающее уведомление в углу экрана при смене тарифа без навязчивого звука.*
 - 🌐 **Bilingual (English / Russian) / Двуязычный интерфейс:**
   - One-click language switch (`[RU]` / `[EN]`) right inside the popover card.
-  - Remembers your language preference in `localStorage`.
-- 🕒 **Live Beijing Clock / Пекинские часы:**
-  - Accurate to the second, independent of your server or browser timezone.
+  - Remembers both language and timezone preferences in `localStorage`.
 - 📊 **Interactive Popover / Интерактивная карточка:**
-  - Click the badge to open full schedule breakdown, live seconds countdown, and progress bar.
-- 🎨 **Native Theme Integration:**
-  - Blends seamlessly into DeepSeek Harness light and dark themes using `--dsw-alias-*` design tokens.
-- 🛡️ **Clean Architecture:**
-  - Zero external dependencies. Built natively for DSH 0.1.7+ with standard `slots` injection.
+  - Click the badge to open full schedule breakdown, live seconds countdown, and phase progress bar.
+- 🎨 **DeepSeek Harness Design Token Integration:**
+  - Seamlessly blends into DeepSeek Harness light and dark themes using official `--dsw-alias-*` tokens.
+- 🛡️ **Clean Cordis Architecture:**
+  - Zero external npm dependencies. Native client slot injection (`conversation.session.header.utilities`).
 
 ---
 
 ## 🕒 Official DeepSeek API Schedule (Beijing Time, UTC+8) / Расписание
 
-| Status | When (Пекинское время) | Pricing / Тариф |
-| :--- | :--- | :--- |
-| 🔴 **Peak / Пик** | Weekdays **09:00–12:00** & **14:00–18:00** | Стандартный тариф (в 2 раза дороже льготного) |
-| 🟢 **Off-Peak / Эконом** | Будни: ночь, утро и перерыв **12:00–14:00** | **Скидка 50% (50% OFF)** |
-| 🟢 **Weekends / Выходные** | **Суббота и Воскресенье круглосуточно** | **Скидка 50% (24/7 All-Day Half Price)** |
+| Status | Beijing Time (UTC+8) | Local Time (UTC+3 Minsk/Moscow) | Pricing / Тариф |
+| :--- | :--- | :--- | :--- |
+| 🔴 **Peak 1 / Пик 1** | **09:00–12:00** | **04:00–07:00** | Стандартный тариф (100%) |
+| 🔴 **Peak 2 / Пик 2** | **14:00–18:00** | **09:00–13:00** | Стандартный тариф (100%) |
+| 🟢 **Off-Peak / Эконом** | Ночь, утро и **12:00–14:00** | День, вечер и **07:00–09:00** | **Скидка 50% (50% OFF)** |
+| 🟢 **Weekends / Выходные** | **Сб и Вс круглосуточно** | **Сб и Вс круглосуточно** | **Скидка 50% (24/7 All-Day Half Price)** |
 
 ---
 

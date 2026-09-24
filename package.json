@@ -1,9 +1,10 @@
 {
   "name": "dsh-signal",
-  "version": "1.0.0",
-  "description": "DeepSeek Harness Peak & Off-Peak Hours Status Banner (English / Russian)",
+  "version": "1.1.0",
+  "description": "Intelligent DeepSeek Peak/Off-Peak Tariff Monitor for DeepSeek Harness (RU/EN)",
   "type": "module",
   "main": "lib/index.js",
+  "icon": "./icon.svg",
   "exports": {
     ".": {
       "default": "./lib/index.js"
@@ -15,9 +16,15 @@
   },
   "files": [
     "lib",
+    "icon.svg",
+    "locale",
     "cordis.patch.yml",
     "README.md",
     "LICENSE"
+  ],
+  "locales": [
+    "ru",
+    "en"
   ],
   "keywords": [
     "dsh",
@@ -28,7 +35,8 @@
     "off-peak",
     "pricing",
     "status",
-    "banner"
+    "tariff",
+    "monitor"
   ],
   "license": "MIT",
   "author": "sawickiy-commits",
