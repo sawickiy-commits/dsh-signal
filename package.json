@@ -1,0 +1,50 @@
+{
+  "name": "dsh-signal",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness Peak & Off-Peak Hours Status Banner (English / Russian)",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "deepseek-harness",
+    "dsh-plugin",
+    "peak",
+    "off-peak",
+    "pricing",
+    "status",
+    "banner"
+  ],
+  "license": "MIT",
+  "author": "sawickiy-commits",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sawickiy-commits/dsh-signal.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  }
+}

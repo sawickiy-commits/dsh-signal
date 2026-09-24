@@ -1,0 +1,4 @@
+# dsh-signal cordis bundle patch
+- insert:
+    - id: dsh-signal
+      name: 'dsh-signal'
